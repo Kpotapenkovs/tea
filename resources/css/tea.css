@@ -1,0 +1,45 @@
+body {
+    background-color: rgb(255, 204, 140);
+}
+
+.tea-container {
+    display: flex;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 45px;
+}
+
+.createButton {
+    background-color: rgb(252, 179, 97);
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 10%;
+    margin-top: 170px;
+    border: 3px solid rgb(252, 179, 97);
+}
+
+.tea-list {
+    background-color: rgb(255, 223, 184);
+    width: 500px;
+    height: 700px;
+    margin-top: 130px;
+    border: 3px solid rgb(252, 179, 97);
+    border-radius: 10px;
+}
+
+.tea-item {
+    font-size: 20px;
+    color: rgb(67, 36, 0);
+    margin: 15px;
+}
+
+hr {
+    border: none;
+    border-top: 5px solid rgb(252, 179, 97);
+}

@@ -35,6 +35,4 @@ Route::delete('/homepage/{tea}', [TeaController::class, 'destroy']);
 
     Route::get('/homepage/{user}/create', [TeaController::class, 'create']);
 
-Route::get('/homepage/{tea}', [TeaController::class, 'show']);
-
     Route::put('/homepage/{tea}', [TeaController::class, 'update']);
