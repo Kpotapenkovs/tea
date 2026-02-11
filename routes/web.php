@@ -7,7 +7,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\TeaController;
 
 Route::get('/', function () {
-    return view('homepage');
+    return view('tea.index');
 });
 
 
@@ -31,7 +31,9 @@ Route::post('/homepage', [TeaController::class, 'store']);
 
     Route::get('/homepage/{tea}/edit', [TeaController::class, 'edit']);
 
+
 Route::delete('/homepage/{tea}', [TeaController::class, 'destroy']);
+
 
     Route::get('/homepage/{user}/create', [TeaController::class, 'create']);
 

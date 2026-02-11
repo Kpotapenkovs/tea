@@ -1,9 +1,12 @@
+/* https://coolors.co/palette/ccd5ae-dbe1bc-e9edc9-f4f4d5-fefae0-fcf4d7-faedcd-e7c8a0-deb68a-d4a373 */
+
 body {
-    background-color: rgb(255, 204, 140);
+    background-color: rgb(254, 250, 224);
 }
 
 .tea-container {
     display: flex;
+    height: 810px;
 }
 
 a {
@@ -13,24 +16,25 @@ a {
 }
 
 .createButton {
-    background-color: rgb(252, 179, 97);
+    background-color: rgb(231, 200, 160);
     width: 40px;
     height: 40px;
     justify-content: center;
     align-items: center;
     display: flex;
     border-radius: 10%;
-    margin-top: 170px;
-    border: 3px solid rgb(252, 179, 97);
+    margin-top: 380px;
+    border: 3px solid rgb(222, 182, 138);
 }
 
 .tea-list {
-    background-color: rgb(255, 223, 184);
-    width: 500px;
-    height: 700px;
-    margin-top: 130px;
-    border: 3px solid rgb(252, 179, 97);
+    background-color: rgb(233, 237, 201);
+    width: 700px;
+    height: 500px;
+    align-self: flex-end;
+    border: 3px solid rgb(219, 225, 188);
     border-radius: 10px;
+    overflow:auto;
 }
 
 .tea-item {
@@ -41,5 +45,11 @@ a {
 
 hr {
     border: none;
-    border-top: 5px solid rgb(252, 179, 97);
+    border-top: 5px solid rgb(219, 225, 188);
+}
+
+.expired_date {
+    font-size: 20px;
+    color: rgb(120, 120, 120);
+    margin: 15px;
 }
