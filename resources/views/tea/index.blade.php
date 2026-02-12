@@ -57,7 +57,7 @@
                          <form method="POST" action="homepage/{{$tea->id}}">
                             @csrf
                             @method("delete")
-                            <h2><input type="submit" name="delete" value="dzēst"></h2>
+                            <input type="submit" name="delete" value="dzēst">
                             </form>
                 <hr>
                 </div>
@@ -78,8 +78,8 @@
                 <form method="POST" action="homepage/{{$tea->id}}">
                     @csrf
                     @method("delete")
-                    <h2><input type="submit" name="delete" value="dzēst"></h2>
-                    </form>
+                    <input type="submit" name="delete" value="dzēst">
+                    </form><hr>
                     
     @endif
             @endforeach
