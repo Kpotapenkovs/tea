@@ -6,7 +6,13 @@ body {
 
 .tea-container {
     display: flex;
-    height: 810px;
+    height: 600px;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+     align-items: center;
 }
 
 a {
@@ -23,7 +29,7 @@ a {
     align-items: center;
     display: flex;
     border-radius: 10%;
-    margin-top: 380px;
+    margin-top: 150px;
     border: 3px solid rgb(222, 182, 138);
 }
 
@@ -90,7 +96,7 @@ hr {
 }
 
 .input_date {
-    width: 150px;
+    width: 165px;
     height: 30px;
     margin: 10px;
     border: 2px solid rgb(204, 213, 174);
@@ -113,4 +119,35 @@ hr {
     color: white;
     font-size: 16px;
     cursor: pointer;
+}
+
+.navbar {
+    display: flex;
+    justify-content: left;
+    background-color: rgb(222, 182, 138);
+    border-radius: 0 0 10px 10px;
+    height: 100px;
+    flex-direction: row;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    margin: 0 20px;
+    color:rgb(67, 36, 0)
+}
+
+.logout {
+    color: rgb(67, 36, 0);
+    font-size: 20px;
+    align-self: center;
+    background-color:rgb(148, 111, 76);
+    border: none;
+    border-radius: 5px;
+    width: 90px;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px 10px;
+    margin: left 20px;
+    
 }

@@ -40,7 +40,7 @@ class teaController extends Controller
 
         $request->session()->regenerate();
           
-        return redirect("/homepage");
+        return redirect("/");
 
          
     }
@@ -55,7 +55,7 @@ class teaController extends Controller
 
     public function index()
     {
-        $teas = Tea::where('user_id', '=', Auth::user()->id)->get();
+        $teas = Auth::check() ? Tea::where('user_id', '=', Auth::user()->id)->get() : collect();
         $user = Auth::user();
         return view("tea.index", compact("teas", "user"));
     }
@@ -78,8 +78,7 @@ class teaController extends Controller
         $validated = $request->validate([
             "tea_name" => ["required", "max:255"],
             "shugar" => ["integer"],
-            "planing_time" => ["date_format:H:i"],
-            "planing_date" => ["date"],
+            "planing_time" => ["required", "date"],
             "is_it_drunk" => ["boolean", "nullable"],
             "favorite" => ["boolean", "nullable"],
             "bonus_snack" => ["max:255", "nullable"]
@@ -90,13 +89,12 @@ class teaController extends Controller
             "tea_name" => $request->tea_name,
             "shugar" => $request->shugar,
             "planing_time" => $request->planing_time,
-            "planing_date" => $request->planing_date,
             "is_it_drunk" => $request->is_it_drunk ?? 0,
             "favorite" => $request->favorite ?? 0,
             "bonus_snack" => $request->bonus_snack ?? null
           ]);
         
-        return redirect("/homepage");
+        return redirect("/");
     }
 
 
@@ -107,20 +105,20 @@ class teaController extends Controller
       $validated = $request->validate([
         "tea_name" => ["required", "max:255"],
         "shugar" => ["integer"],
-        "planing_time" => ["integer"],
+        "planing_time" => ["required", "date"],
       ]);
 
       $tea->tea_name = $validated["tea_name"];
       $tea->shugar = $validated["shugar"];
       $tea->planing_time = $validated["planing_time"];
       $tea->save();
-      return redirect("/homepage");
+      return redirect("/");
     }
 
 
 
     public function destroy(Tea $tea){
       $tea->delete();
-      return redirect("/homepage");
+      return redirect("/");
     }
 }

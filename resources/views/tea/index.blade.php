@@ -1,14 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    @vite('resources/css/tea.css')
-    <title>Document</title>
-</head>
-<body>
 
-
+<x-layout>
 
         @auth
 
@@ -31,13 +22,13 @@
             @csrf
             <div class="tea-container"> 
             <div class="createButton">
-            <a href="/homepage/{{ $user->id }}/create">+</a>
+            <a href="/{{ $user->id }}/create">+</a>
             </div>
             <div class="tea-list">
 
             @foreach ($teas as $tea)
 
-            @if ($tea->planing_time < now() && $tea->planing_date <= now())
+            @if ($tea->planing_time < now())
 
 
                 <div class="expired_date">
@@ -53,12 +44,18 @@
 
                         <br> cukura daudzums: {{ $tea->shugar }} 
 
-                        <br> plānošanas laiks: {{ $tea->planing_time }}  {{ $tea->planing_date }}
-                         <form method="POST" action="homepage/{{$tea->id}}">
-                            @csrf
-                            @method("delete")
-                            <input type="submit" name="delete" value="dzēst">
-                            </form>
+                        <br> plānošanas laiks: {{ $tea->planing_time }}
+
+                                <form method="POST" action="/{{$tea->id}}">
+
+                                @csrf
+
+                                @method("delete")
+
+                                <input type="submit" name="delete" value="dzēst">
+
+                                </form>
+                    
                 <hr>
                 </div>
                 @else
@@ -73,14 +70,20 @@
 
                 <br> cukura daudzums: {{ $tea->shugar }} 
 
-                <br> plānošanas laiks: {{ $tea->planing_time }}  {{ $tea->planing_date }}
+                <br> plānošanas laiks: {{ $tea->planing_time }}
 
-                <form method="POST" action="homepage/{{$tea->id}}">
-                    @csrf
-                    @method("delete")
-                    <input type="submit" name="delete" value="dzēst">
-                    </form><hr>
-                    
+                            <form method="POST" action="/{{$tea->id}}">
+
+                                @csrf
+
+                                @method("delete")
+
+                                <input type="submit" name="delete" value="dzēst">
+
+                            </form>
+
+                    <hr>
+                </div>
     @endif
             @endforeach
 
@@ -92,6 +95,9 @@
 
 
             </form>
+
+
+
 
 
 
@@ -114,5 +120,4 @@
             @endguest
    
 
-</body>
-</html>
+    </x-layout>

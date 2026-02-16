@@ -13,7 +13,6 @@ class Tea extends Model
         'tea_name',
         'shugar',
         'planing_time',
-        'planing_date',
         'is_it_drunk',
         'favorite',
         'bonus_snack',

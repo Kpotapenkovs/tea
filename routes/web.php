@@ -6,11 +6,6 @@ use App\Http\Controllers\RegisterController;
 
 use App\Http\Controllers\TeaController;
 
-Route::get('/', function () {
-    return view('tea.index');
-});
-
-
 
 Route::get('/login', [TeaController::class, "sessioncreate"])->name("login");
 
@@ -25,16 +20,16 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 
 
-    Route::get('/homepage', [TeaController::class, 'index']);
+    Route::get('/', [TeaController::class, 'index']);
 
-Route::post('/homepage', [TeaController::class, 'store']);
+Route::post('/', [TeaController::class, 'store']);
 
-    Route::get('/homepage/{tea}/edit', [TeaController::class, 'edit']);
-
-
-Route::delete('/homepage/{tea}', [TeaController::class, 'destroy']);
+    Route::get('/{tea}/edit', [TeaController::class, 'edit']);
 
 
-    Route::get('/homepage/{user}/create', [TeaController::class, 'create']);
+Route::delete('/{tea}', [TeaController::class, 'destroy']);
 
-    Route::put('/homepage/{tea}', [TeaController::class, 'update']);
+
+    Route::get('/{user}/create', [TeaController::class, 'create']);
+
+    Route::put('/{tea}', [TeaController::class, 'update']);
