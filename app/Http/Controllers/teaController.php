@@ -40,7 +40,7 @@ class teaController extends Controller
 
         $request->session()->regenerate();
           
-        return redirect("/");
+        return redirect("/homepage");
 
          
     }
@@ -94,7 +94,7 @@ class teaController extends Controller
             "bonus_snack" => $request->bonus_snack ?? null
           ]);
         
-        return redirect("/");
+        return redirect("/homepage");
     }
 
 
@@ -119,6 +119,6 @@ class teaController extends Controller
 
     public function destroy(Tea $tea){
       $tea->delete();
-      return redirect("/");
+      return redirect("/homepage");
     }
 }

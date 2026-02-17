@@ -6,7 +6,7 @@
   <div class="create_tea">
 <h1>Izveidot tēju</h1>
 
-<form class="flex-container" method="POST" action="/">
+<form class="flex-container" method="POST" action="/homepage">
 @csrf
   <input name="tea_name" placeholder="tējas nosaukums" class="input_field"/>
   @error("tea_name")
