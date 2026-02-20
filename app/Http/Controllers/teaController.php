@@ -80,7 +80,7 @@ class teaController extends Controller
             "shugar" => ["integer"],
             "planing_time" => ["required", "date"],
             "is_it_drunk" => ["boolean", "nullable"],
-            "favorite" => ["boolean", "nullable"],
+            "favorite" => ["boolean"],
             "bonus_snack" => ["max:255", "nullable"]
           ]);
         
@@ -90,7 +90,7 @@ class teaController extends Controller
             "shugar" => $request->shugar,
             "planing_time" => $request->planing_time,
             "is_it_drunk" => $request->is_it_drunk ?? 0,
-            "favorite" => $request->favorite ?? 0,
+            "favorite" => false,
             "bonus_snack" => $request->bonus_snack ?? null
           ]);
         
@@ -111,8 +111,9 @@ class teaController extends Controller
       $tea->tea_name = $validated["tea_name"];
       $tea->shugar = $validated["shugar"];
       $tea->planing_time = $validated["planing_time"];
+      $tea->favorite = $request->favorite ?? 0;
       $tea->save();
-      return redirect("/");
+      return redirect("/homepage");
     }
 
 

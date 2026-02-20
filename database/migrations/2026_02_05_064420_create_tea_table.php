@@ -18,7 +18,7 @@ return new class extends Migration
             $table->integer('shugar');
             $table->datetime('planing_time');
             $table->boolean('is_it_drunk')->nullable();
-            $table->boolean('favorite')->nullable();
+            $table->boolean('favorite');
             $table->string('bonus_snack')->nullable();
             $table->timestamps();
         });
