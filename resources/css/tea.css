@@ -7,6 +7,11 @@ body {
     font-family: Arial, sans-serif;
 }
 
+.list_text{
+    color: rgb(56, 51, 20);
+    font-size: 20px;
+}
+
 .tea-container {
     display: flex;
     height: 600px;
@@ -264,4 +269,26 @@ hr {
     border: none;
     margin-bottom: 10px;
     color: white;
+}
+
+.list_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.list {
+    display: flex;
+    height: 600px;
+    margin-left: 10px;
+}
+
+.list_tea {
+    background-color: rgb(233, 237, 201);
+    width: 700px;
+    height: 500px;
+    align-self: flex-end;
+    border: 3px solid rgb(219, 225, 188);
+    border-radius: 10px;
+    overflow: auto;
 }

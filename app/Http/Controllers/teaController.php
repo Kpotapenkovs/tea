@@ -16,7 +16,9 @@ use App\Models\User;
 
 use App\Models\Tea;
 
-class teaController extends Controller
+use App\Models\TeaList;
+
+class TeaController extends Controller
 {
 
     public function sessiondestroy()
@@ -57,7 +59,8 @@ class teaController extends Controller
     {
         $teas = Auth::check() ? Tea::where('user_id', '=', Auth::user()->id)->get() : collect();
         $user = Auth::user();
-        return view("tea.index", compact("teas", "user"));
+        $tealist = Auth::check() ? TeaList::where('user_id', '=', Auth::user()->id)->get() : collect();
+        return view("tea.index", compact("tealist" ,"teas", "user"));
     }
 
     public function show(Tea $tea, User $user) {
@@ -66,7 +69,8 @@ class teaController extends Controller
 
       
     public function create(Tea $tea, User $user) {
-        return view("tea.create", compact("tea", "user"));
+      $tealist = Auth::check() ? TeaList::where('user_id', '=', Auth::user()->id)->get() : collect();
+        return view("tea.create", compact("tealist", "tea", "user"));
       }
 
     public function edit(Tea $tea, User $user) {
@@ -74,7 +78,6 @@ class teaController extends Controller
       }
 
     public function store(Request $request) {
-        
         $validated = $request->validate([
             "tea_name" => ["required", "max:255"],
             "shugar" => ["integer"],
@@ -96,8 +99,6 @@ class teaController extends Controller
         
         return redirect("/homepage");
     }
-
-
 
 
     public function update(Request $request, Tea $tea) {

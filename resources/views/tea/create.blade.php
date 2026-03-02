@@ -1,4 +1,5 @@
 @vite('resources/css/tea.css')
+<x-layout>
 <x-slot:title>Izveidot uzdevumu</x-slot:title>
 
 
@@ -8,10 +9,19 @@
 
 <form class="flex-container" method="POST" action="/homepage">
 @csrf
-  <input name="tea_name" placeholder="tējas nosaukums" class="input_field"/>
-  @error("tea_name")
-    <p>{{ $message }}</p>
-  @enderror
+
+@if($tealist->isEmpty())
+    <p>Vispirms izveidojiet tēju</p>
+@else
+    <label for="tea_name">Izvēlaties tēju</label>
+    <select id="tea_name" name="tea_name">
+        @foreach ($tealist as $tealis)
+            <option value="{{ $tealis->name }}">
+                {{ $tealis->name }}
+            </option>
+        @endforeach
+    </select>
+
 
 <input name="shugar" placeholder=" cik daudz cukura" class="input_field"/>
   @error("shugar")
@@ -30,6 +40,7 @@
   @enderror
 
   <button class="submit_button">Saglabāt</button>
-</form>
+</form>@endif
 </div>
 </div>
+</x-layout>

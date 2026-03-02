@@ -6,6 +6,8 @@ use App\Http\Controllers\RegisterController;
 
 use App\Http\Controllers\TeaController;
 
+use App\Http\Controllers\TealistController;
+
 
 Route::get('/', function () {
     return view('tea.index');
@@ -28,12 +30,15 @@ Route::get('/homepage', [TeaController::class, 'index']);
 
 Route::post('/homepage', [TeaController::class, 'store']);
 
-Route::get('/homepage/{tea}/edit', [TeaController::class, 'edit']);
+Route::post('/homepage/create', [TealistController::class, 'store']);
 
+Route::get('/homepage/{tea}/edit', [TeaController::class, 'edit']);
 
 Route::delete('/homepage/{tea}', [TeaController::class, 'destroy']);
 
 
-    Route::get('/homepage/{user}/create', [TeaController::class, 'create']);
+    Route::get('/homepage/create', [TeaController::class, 'create']);
 
-    Route::put('/homepage/{tea}', [TeaController::class, 'update']);
+    Route::get('/tea', [TealistController::class, 'create']);
+
+Route::put('/homepage/{tea}', [TeaController::class, 'update']);

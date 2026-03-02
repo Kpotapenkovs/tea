@@ -1,11 +1,10 @@
 
 <x-layout>
     @auth
-
             @csrf
             <div class="tea-container"> 
             <div class="createButton">
-            <a href="homepage/{{ $user->id }}/create">+</a>
+            <a href="homepage/create">+</a>
             </div>
             <div class="tea-list"> 
 
@@ -13,6 +12,7 @@
             <hr>
             
             @foreach ($teas as $tea)
+            
                 @if ($tea->planing_time < now())
 
                     <div class="expired_date">
