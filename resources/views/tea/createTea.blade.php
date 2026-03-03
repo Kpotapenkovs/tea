@@ -1,6 +1,6 @@
 @vite('resources/css/tea.css')
 <x-layout>
-<x-slot:title>Izveidot uzdevumu</x-slot:title>
+<x-slot:title>Izveidot Tēju</x-slot:title>
 
 
 <div class="create_tea_container">

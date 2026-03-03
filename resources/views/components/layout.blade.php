@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @vite('resources/css/tea.css')
     <script src="resources/js/tea.js"></script>
-    <title>{{ $title ?? "Uzdevumi un dienasgrāmata" }}</title>
+    <title>{{ $title ?? "Tēju saraksts" }}</title>
 </head>
 <body>
   <x-navigation></x-navigation>
