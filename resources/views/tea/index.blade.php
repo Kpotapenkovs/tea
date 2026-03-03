@@ -97,6 +97,20 @@
 
             </div>
 
+            <div class="teas_container">
+            <div class="list">
+            <div class="teas">
+
+            <h1>Teas</h1>
+            <hr>
+            <br>
+            @foreach ($tealist as $tealis)
+            <p class="list-text">{{ $tealis->name }}</p><hr><br>
+            @endforeach
+
+            </div>
+            </div>
+            </div>
             @endauth
 
             @guest

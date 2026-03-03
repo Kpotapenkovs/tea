@@ -1,11 +1,11 @@
 @vite('resources/css/tea.css')
 <x-layout>
-<x-slot:title>Izveidot uzdevumu</x-slot:title>
+<x-slot:title>Izveidot atgādni</x-slot:title>
 
 
 <div class="create_tea_container">
   <div class="create_tea">
-<h1>Izveidot tēju</h1>
+<h1>Izveidot atgādni</h1>
 
 <form class="flex-container" method="POST" action="/homepage">
 @csrf
@@ -43,4 +43,5 @@
 </form>@endif
 </div>
 </div>
+
 </x-layout>
